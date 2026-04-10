@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sahur Project!</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="hero-background"></div>
+  <main class="hero">
+    <div class="hero-card">
+      <div class="hero-copy">
+        <p class="eyebrow">Welcome to the Sahur Project!</p>
+        <button class="button button-primary" id="play-sahur-audio">Press Me!</button>
+      </div>
+      <div class="hero-media">
+        <img src="Sahur2.png" alt="Welcome to the Sahur Project!" />
+      </div>
+    </div>
+  </main>
+  <div class="corner-credit">Made By StickDriftEugene</div>
+  <audio id="sahur-audio" src="tung-tung-sahur-made-with-Voicemod.wav"></audio>
+  <script>
+    const playButton = document.getElementById('play-sahur-audio');
+    const audio = document.getElementById('sahur-audio');
+
+    playButton.addEventListener('click', () => {
+      audio.currentTime = 0;
+      audio.play().catch(() => {
+        console.warn('Audio playback failed. User interaction may be required.');
+      });
+    });
+  </script>
+</body>
+</html>
